@@ -1,0 +1,22 @@
+{
+  "name": "OnPecas: The Best Of!",
+  "description": "OnPecas Full Tadinho's company",
+  "image": "heroku/python",
+  "repository": "https://github.com/andersonbelli/onpecas.git",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "",
+      "generator": ""
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}
