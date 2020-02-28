@@ -1,1 +1,1 @@
-web: gunicorn onpecas_api.wsgi --log-file -
+web: gunicorn onpecas_web.wsgi --log-file -
