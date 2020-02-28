@@ -25,8 +25,7 @@ SECRET_KEY = 'h1m(1@67#4@2-$xw#qp)u^aq3&zxr6o#bnbyec0j1)@=zzwrpu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['onpecas.herokuapp.com']
-
+ALLOWED_HOSTS = ['onpecas.herokuapp.com','127.0.0.1']
 
 # Application definition
 
@@ -40,6 +39,7 @@ INSTALLED_APPS = [
 
     #app
     'onpecas_api',
+    'onpecas_web',
 
     'rest_framework',
 ]
@@ -59,7 +59,9 @@ ROOT_URLCONF = 'onpecas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'onpecas_web/templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -152,8 +154,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Extra places for collectstatic to find static files.
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'onpecas/static'), ]
