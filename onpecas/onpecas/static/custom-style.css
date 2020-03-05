@@ -12,9 +12,9 @@
 }
 
 .welcome_area .hero-content h2 {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .welcome_area .hero-content h6 {
-  color: #9e9e9e;
+  color: #9e9e9e !important;
 }
