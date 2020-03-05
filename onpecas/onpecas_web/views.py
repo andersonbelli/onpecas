@@ -7,3 +7,9 @@ def index (req):
 
 def details (req):
   return render(req,'single-product-details.html')
+
+def aboutus (req):
+  return render(req, 'blog.html')
+
+def contact (req):
+  return render(req, 'contact.html')
