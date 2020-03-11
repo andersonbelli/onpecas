@@ -25,8 +25,7 @@ SECRET_KEY = 'h1m(1@67#4@2-$xw#qp)u^aq3&zxr6o#bnbyec0j1)@=zzwrpu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['onpecas.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
@@ -38,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #app
+    # app
     'onpecas_api',
+    'onpecas_web',
 
     'rest_framework',
 ]
@@ -52,14 +52,20 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+#MIDDLEWARE_CLASSES = ('whitenoise.middleware.WhiteNoiseMiddleware',)
+
 
 ROOT_URLCONF = 'onpecas.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'onpecas_web/templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,8 +92,13 @@ DATABASES = {
         'PASSWORD': 'e74af55f91d490ea8e5ec5243f0f1bc6dee018b808b57e1c3d344bac1789ce74',
         'HOST': 'ec2-3-91-112-166.compute-1.amazonaws.com',
         'PORT': '5432',
+<<<<<<< HEAD
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+=======
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+>>>>>>> 61967f119393437789808367d4b5375d8aa6ea40
     }
 }
 
@@ -111,25 +122,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
-
-
-
-
 REST_FRAMEWORK = {
-	'DEFAULT_SCHEMA_CLASS': 
-'rest_framework.schemas.coreapi.AutoSchema'
+    'DEFAULT_SCHEMA_CLASS':
+    'rest_framework.schemas.coreapi.AutoSchema'
 }
-
-
-
-
-
-
-
-
-
-
 
 
 # Internationalization
@@ -149,4 +145,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Extra places for collectstatic to find static files.
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'onpecas/static'), ]
+
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

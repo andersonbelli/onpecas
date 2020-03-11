@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 web: gunicorn onpecas.wsgi
+=======
+web: gunicorn onpecas.wsgi --log-file -
+>>>>>>> 61967f119393437789808367d4b5375d8aa6ea40
