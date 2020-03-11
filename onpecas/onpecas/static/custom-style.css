@@ -1,0 +1,20 @@
+.product-img img {
+  height: 100%;
+  width: auto !important;
+  max-width: 255px;
+  max-height: 190px;
+  margin: auto;
+}
+
+.product-img img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.welcome_area .hero-content h2 {
+  color: #ffffff !important;
+}
+
+.welcome_area .hero-content h6 {
+  color: #9e9e9e !important;
+}
