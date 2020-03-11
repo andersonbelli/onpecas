@@ -80,8 +80,14 @@ WSGI_APPLICATION = 'onpecas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd4ks0hrr0svlfv',
+        'USER': 'vhsgfjixmxlqos',
+        'PASSWORD': 'e74af55f91d490ea8e5ec5243f0f1bc6dee018b808b57e1c3d344bac1789ce74',
+        'HOST': 'ec2-3-91-112-166.compute-1.amazonaws.com',
+        'PORT': '5432',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
